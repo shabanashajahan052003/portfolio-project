@@ -10,7 +10,7 @@ const experiences = [
     title: "UI Developer",
     company: "Valoriz Digital (Mozanta Technologies)",
     location: "Technopark Phase 1 , Trivandrum",
-    period: "Current",
+    period: "May 2026 - July 2026",
     description:
       "Designing and developing modern user interfaces, improving user experience and building responsive web applications with cutting-edge frontend technologies.",
     accent: "#06b6d4",
@@ -19,7 +19,7 @@ const experiences = [
     title: "Software Developer",
     company: "BlueRipples Technologies",
     location: "Kinfrapark , Trivandrum",
-    period: "Prior",
+    period: "Nov 2025 - March 2026",
     description:
       "Developed responsive applications and integrated REST APIs while collaborating with cross-functional teams. Gained experience in full-stack development workflows.",
     accent: "#8b5cf6",
