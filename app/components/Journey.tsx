@@ -57,15 +57,15 @@ const journey = [
     icon: "⚙️",
     title: "Software Developer",
     description: "BlueRipples Technologies",
-    category: "Experience",
+    category: "Internship",
   },
   {
-  icon: "🎨",
-  title: "UI Developer",
-  description: "Valoriz Digital (Mozanta Technologies)",
-  category: "Experience",
-},
- 
+    icon: "🎨",
+    title: "UI Developer",
+    description: "Valoriz Digital (Mozanta Technologies)",
+    category: "Internship",
+  },
+
 ];
 
 const categoryColors: Record<string, string> = {

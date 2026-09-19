@@ -3,7 +3,7 @@
 import { m as motion, type Transition } from "framer-motion";
 import dynamic from "next/dynamic";
 import { useEffect } from "react";
-import Image from "next/image";
+
 import { ChevronDown, Download, ArrowRight, FileText } from "lucide-react";
 import { useMotionValue, useSpring, useTransform } from "framer-motion";
 
@@ -97,45 +97,19 @@ export default function Hero() {
         aria-hidden="true"
       />
 
-      {/* ── Text & Image Content (parallax layer) ── */}
+      {/* ── Text Content (parallax layer) ── */}
       <motion.div
         style={{ x: textX, y: textY }}
-        className="relative z-10 px-6 max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-center gap-10 md:gap-20"
+        className="relative z-10 px-6 max-w-4xl mx-auto flex flex-col items-center justify-center"
       >
-        {/* Profile Image */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
-          animate={{ opacity: 1, scale: 1, rotate: 0 }}
-          transition={{ duration: 0.8, delay: 0.5, type: "spring" }}
-          className="relative w-56 h-56 md:w-80 md:h-80 flex-shrink-0 mb-6 md:mb-0"
-        >
-          {/* Subtle glow behind the image */}
-          <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-cyan-500/20 to-purple-500/20 blur-2xl animate-pulse" />
-
-          <motion.div
-            animate={{ y: [-10, 10, -10] }}
-            transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-            className="relative w-full h-full transition-all duration-500 z-10 group drop-shadow-[0_0_20px_rgba(6,182,212,0.3)] hover:drop-shadow-[0_0_40px_rgba(139,92,246,0.6)]"
-          >
-            <Image
-              src="/images/Shabu01.webp"
-              alt="Shabana"
-              fill
-              sizes="(max-width: 768px) 224px, 320px"
-              className="object-contain transition-transform duration-500 group-hover:scale-105"
-              priority
-            />
-          </motion.div>
-        </motion.div>
-
         {/* Text Content */}
-        <div className="text-center md:text-left flex flex-col items-center md:items-start flex-1 min-w-0">
+        <div className="text-center flex flex-col items-center min-w-0">
           {/* Animated name — character by character */}
           <motion.h1
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="gradient-text text-[clamp(1.5rem,4.2vw,2.9rem)] font-semibold flex justify-center md:justify-start flex-nowrap whitespace-nowrap leading-none tracking-tight"
+            className="gradient-text text-[clamp(1.5rem,4.2vw,2.9rem)] font-semibold flex justify-center flex-nowrap whitespace-nowrap leading-none tracking-tight"
           >
             {name.split("").map((char, i) => (
               <motion.span

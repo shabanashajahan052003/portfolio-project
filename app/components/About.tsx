@@ -9,12 +9,12 @@ import GlassCard from "./ui/GlassCard";
 export default function About() {
   return (
     <AnimatedSection className="px-6 py-40 section-glow-purple">
-      <div className="mx-auto max-w-4xl" id="about">
+      <div className="mx-auto max-w-5xl" id="about">
         <AnimatedHeading className="mb-12 text-center text-5xl font-bold">
           About Me
         </AnimatedHeading>
 
-        <GlassCard delay={0.2} hover tilt className="p-10 md:p-12 text-center relative overflow-hidden">
+        <GlassCard delay={0.2} hover tilt className="p-10 md:p-12 relative overflow-hidden">
           {/* Decorative background glow */}
           <div
             className="absolute top-[-50%] left-[-10%] w-64 h-64 rounded-full opacity-20 pointer-events-none"
@@ -29,17 +29,46 @@ export default function About() {
             }}
           />
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="relative z-10"
-          >
-            <p className="text-lg md:text-xl leading-relaxed text-slate-300 font-light">
-              I am <span className="text-cyan-400 font-medium">Shabana</span>, a passionate Frontend Developer and Computer Science graduate with a strong interest in creating modern, user-friendly, and visually engaging web experiences. I enjoy transforming ideas into responsive and interactive digital products while continuously learning new technologies and design trends.
-            </p>
-          </motion.div>
+          <div className="relative z-10 flex flex-col md:flex-row items-center gap-10">
+            {/* Profile Image */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
+              whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.3, type: "spring" }}
+              className="relative w-48 h-48 md:w-64 md:h-64 flex-shrink-0"
+            >
+              {/* Subtle glow behind the image */}
+              <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-cyan-500/20 to-purple-500/20 blur-2xl animate-pulse" />
+
+              <motion.div
+                animate={{ y: [-8, 8, -8] }}
+                transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
+                className="relative w-full h-full transition-all duration-500 z-10 group drop-shadow-[0_0_20px_rgba(6,182,212,0.3)] hover:drop-shadow-[0_0_40px_rgba(139,92,246,0.6)]"
+              >
+                <Image
+                  src="/images/Shabu01.png"
+                  alt="Shabana"
+                  fill
+                  sizes="(max-width: 768px) 192px, 256px"
+                  className="object-contain transition-transform duration-500 group-hover:scale-105"
+                />
+              </motion.div>
+            </motion.div>
+
+            {/* Text Content */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="text-center md:text-left"
+            >
+              <p className="text-lg md:text-xl leading-relaxed text-slate-300 font-light">
+                I am <span className="text-cyan-400 font-medium">Shabana</span>, a passionate Frontend Developer and Computer Science graduate with a strong interest in creating modern, user-friendly, and visually engaging web experiences. I enjoy transforming ideas into responsive and interactive digital products while continuously learning new technologies and design trends.
+              </p>
+            </motion.div>
+          </div>
         </GlassCard>
       </div>
     </AnimatedSection>
